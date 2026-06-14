@@ -250,7 +250,7 @@ def main():
     if not args.source or not args.target:
         parser.error("Необходимо указать SOURCE и TARGET (через CLI или переменные окружения)")
 
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.getLogger().handlers.clear()
 
     syncer = DatabaseSynchronizer(args.source, args.target, dry_run=args.dry_run, schema_only=args.schema_only)
     syncer.batch_size = args.batch_size
