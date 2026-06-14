@@ -1,0 +1,7 @@
+services:
+  sync:
+    build: .
+    environment:
+      SOURCE_URL: ${SOURCE_URL}
+      TARGET_URL: ${TARGET_URL}
+      BATCH_SIZE: ${BATCH_SIZE:-1000}
